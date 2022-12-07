@@ -15,6 +15,8 @@ const getProveedores = async () => {
     setProveedor(resul.data);
 }
 
+console.log('estoy en la rama secundaria')
+
 const eliminarProveedores = async(id) => {
     await axios.delete(`${URL}${id}`)
     getProveedores()

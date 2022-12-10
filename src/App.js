@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 //importamos componentes
 import CompMostrarProveedores from './Componentes/Proveedores/MostrarProveedores';
+import CompAgregarProveedores from './Componentes/Proveedores/CrearProveedores';
 //importamos librerias routes
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
@@ -14,6 +15,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<CompMostrarProveedores/>}></Route>
+          <Route path='/agregar' element={<CompAgregarProveedores/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>

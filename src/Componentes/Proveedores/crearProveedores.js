@@ -24,7 +24,7 @@ const CompAgregarProveedores = () => {
             telefono: telefono,
             empresa: empresa
         })
-        navigate('/');
+        navigate('/proveedores');
     }
 
     return (

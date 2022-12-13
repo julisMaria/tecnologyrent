@@ -3,6 +3,8 @@ import './App.css';
 //importamos componentes
 import CompMostrarProveedores from './Componentes/Proveedores/MostrarProveedores';
 import CompAgregarProveedores from './Componentes/Proveedores/CrearProveedores';
+import CompEditarProveedores from './Componentes/Proveedores/EditarProveedores';
+
 //importamos librerias routes
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
@@ -14,8 +16,10 @@ function App() {
       </header>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<CompMostrarProveedores/>}></Route>
-          <Route path='/agregar' element={<CompAgregarProveedores/>}></Route>
+          <Route path='/proveedores' element={<CompMostrarProveedores/>}></Route>
+          <Route path='/proveedores/agregar' element={<CompAgregarProveedores/>}></Route>
+          <Route path='/proveedores/editar' element={<CompEditarProveedores/>}></Route>
+
         </Routes>
       </BrowserRouter>
     </div>

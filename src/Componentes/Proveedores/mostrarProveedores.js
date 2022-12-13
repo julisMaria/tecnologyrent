@@ -26,7 +26,7 @@ const CompMostrarProveedores = () => {
         <div className='container'>
             <div className='row'>
                 <div className='col'>
-                    <Link to='/agregar' className='btn btn-primary mt-2 mb-2'><i className="fa-solid fa-user-plus"></i></Link>   
+                    <Link to='/proveedores/agregar' className='btn btn-primary mt-2 mb-2'><i className="fa-solid fa-user-plus"></i></Link>   
                     <table className='table'>
                         <thead className='tableTheadBg'>
                             <tr>                           
@@ -49,7 +49,7 @@ const CompMostrarProveedores = () => {
                                     <td>{proveedor.telefono}</td>
                                     <td>{proveedor.empresa}</td>
                                     <td> 
-                                        <Link to={`/editar/${proveedor._id}`} className='btn btn-info'><i className="fa-solid fa-file-pen"></i></Link> 
+                                        <Link to={`/proveedores/editar/${proveedor._id}`} className='btn btn-info'><i className="fa-solid fa-file-pen"></i></Link> 
                                         <button onClick={() => eliminarProveedores(proveedor._id)} className='btn btn-danger'><i className="fa-solid fa-user-xmark"></i></button>
                                     </td>
                                 </tr>

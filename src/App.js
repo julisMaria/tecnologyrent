@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path='/proveedores' element={<CompMostrarProveedores/>}></Route>
           <Route path='/proveedores/agregar' element={<CompAgregarProveedores/>}></Route>
-          <Route path='/proveedores/editar' element={<CompEditarProveedores/>}></Route>
+          <Route path='/proveedores/editar/:id' element={<CompEditarProveedores/>}></Route>
 
         </Routes>
       </BrowserRouter>

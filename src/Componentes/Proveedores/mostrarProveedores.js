@@ -15,8 +15,6 @@ const CompMostrarProveedores = () => {
         setProveedor(res.data);
     }
 
-    //console.log('estoy en la rama secundaria')
-
     const eliminarProveedores = async (id) => {
         await axios.delete(`${URL}${id}`)
         getProveedores();

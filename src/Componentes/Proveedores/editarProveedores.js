@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 const URL = 'http://localhost:5000/api/proveedores/'
 
+//campo proveedores
 const CompEditarProveedores = () => {
     const [nombres, setNombres] = useState('');
     const [apellidos, setApellidos] = useState('');
@@ -31,7 +32,10 @@ const CompEditarProveedores = () => {
 
     useEffect(() => {
         getProveedorById();
+        // eslint-disable-next-line
     },[]);
+
+    //funcion modificar
 
     const getProveedorById = async () => {
         const res = await axios.get(`${URL}${id}`);

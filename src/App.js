@@ -11,6 +11,7 @@ import CompMostrarProductos from './Componentes/Productos/MostrarProductos';
 
 //importamos librerias routes
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import CompAgregarProductos from './Componentes/Productos/CrearProductos';
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
           <Route path='/clientes/agregar' element={<CompAgregarClientes/>}></Route>
           <Route path='/clientes/editar/:id' element={<CompEditarClientes/>}></Route>
           <Route path='/productos' element={<CompMostrarProductos/>}></Route>
+          <Route path='/productos/agregar' element={<CompAgregarProductos/>}></Route>
+
         </Routes>
       </BrowserRouter>
     </div>

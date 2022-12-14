@@ -2,22 +2,22 @@ import axios from 'axios';  //sirve para hacer peticiones
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-const URL = 'http://localhost:5000/api/proveedores/'
+const URL = 'http://localhost:5000/api/clientes/'
 
 //campo proveedores
-const CompEditarProveedores = () => {
+const CompEditarClientes = () => {
     const [nombres, setNombres] = useState('');
     const [apellidos, setApellidos] = useState('');
     const [documento, setDocumento] = useState('');
     const [correo, setCorreo] = useState('');
     const [telefono, setTelefono] = useState('');
-    const [empresa, setEmpresa] = useState('');
+    const [ciudad, setCiudad] = useState('');
     const navigate = useNavigate();
     const {id} = useParams();
 
     //funcion actualizar
 
-    const ActualizarProveedor = async (guardar) => {
+    const ActualizarCliente = async (guardar) => {
         guardar.preventDefault()
         await axios.put(`${URL}${id}`, {
             nombres: nombres,
@@ -25,32 +25,32 @@ const CompEditarProveedores = () => {
             documento: documento,
             correo: correo,
             telefono: telefono,
-            empresa: empresa
+            ciudad: ciudad
         })
-        navigate('/proveedores');
+        navigate('/clientes');
     }
 
     useEffect(() => {
-        getProveedorById();
+        getClienteById();
         // eslint-disable-next-line
     },[]);
 
     //funcion modificar
 
-    const getProveedorById = async () => {
+    const getClienteById = async () => {
         const res = await axios.get(`${URL}${id}`);
         setNombres(res.data.nombres)
         setApellidos(res.data.apellidos)
         setDocumento(res.data.documento)
         setCorreo(res.data.correo)
         setTelefono(res.data.telefono)
-        setEmpresa(res.data.empresa)
+        setCiudad(res.data.ciudad)
     }
 
     return (
         <div>
-            <h3> Modulo Modificar Proveedores </h3>
-            <form onSubmit={ActualizarProveedor}>
+            <h3> Modulo Modificar Clientes </h3>
+            <form onSubmit={ActualizarCliente}>
                 <div className='mb-3'>
                     <label className='form-label'> Nombres </label>
                     <input value={nombres} onChange={(guardar) => setNombres(guardar.target.value)}
@@ -82,8 +82,8 @@ const CompEditarProveedores = () => {
                 </div>
 
                 <div className='mb-3'>
-                    <label className='form-label'> Empresa </label>
-                    <input value={empresa} onChange={(guardar) => setEmpresa(guardar.target.value)}
+                    <label className='form-label'> Ciudad </label>
+                    <input value={ciudad} onChange={(guardar) => setCiudad(guardar.target.value)}
                         type='text' className='form-control'></input>
                 </div>
 
@@ -94,4 +94,4 @@ const CompEditarProveedores = () => {
 
 }
 
-export default CompEditarProveedores;
+export default CompEditarClientes;

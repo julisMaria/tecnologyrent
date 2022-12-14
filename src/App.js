@@ -7,9 +7,12 @@ import CompEditarProveedores from './Componentes/Proveedores/EditarProveedores';
 import CompMostrarClientes from './Componentes/Clientes/MostrarClientes';
 import CompAgregarClientes from './Componentes/Clientes/CrearClientes';
 import CompEditarClientes from './Componentes/Clientes/EditarClientes';
+import CompMostrarProductos from './Componentes/Productos/MostrarProductos';
+import CompEditarProductos from './Componentes/Productos/EditarProductos';
 
 //importamos librerias routes
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import CompAgregarProductos from './Componentes/Productos/CrearProductos';
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
           <Route path='/clientes' element={<CompMostrarClientes/>}></Route>
           <Route path='/clientes/agregar' element={<CompAgregarClientes/>}></Route>
           <Route path='/clientes/editar/:id' element={<CompEditarClientes/>}></Route>
+          <Route path='/productos' element={<CompMostrarProductos/>}></Route>
+          <Route path='/productos/agregar' element={<CompAgregarProductos/>}></Route>
+          <Route path='/productos/editar/:id' element={<CompEditarProductos/>}></Route>
 
         </Routes>
       </BrowserRouter>

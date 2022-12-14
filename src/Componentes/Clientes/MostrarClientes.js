@@ -15,7 +15,7 @@ const CompMostrarClientes = () => {
         setCliente(res.data);
     }
 
-    const eliminarClientes = async (id) => {
+    const eliminarCliente = async (id) => {
         await axios.delete(`${URL}${id}`)
         getClientes();
     }
@@ -33,7 +33,7 @@ const CompMostrarClientes = () => {
                                 <th> Documento </th>
                                 <th> Correo </th>
                                 <th> Telefono </th>
-                                <th> Empresa </th>
+                                <th> Ciudad </th>
                                 <th> Acciones </th>
                             </tr>
                         </thead>
@@ -45,10 +45,10 @@ const CompMostrarClientes = () => {
                                     <td>{cliente.documento}</td>
                                     <td>{cliente.correo}</td>
                                     <td>{cliente.telefono}</td>
-                                    <td>{cliente.empresa}</td>
+                                    <td>{cliente.ciudad}</td>
                                     <td> 
                                         <Link to={`/clientes/editar/${cliente._id}`} className='btn btn-info'><i className="fa-solid fa-file-pen"></i></Link> 
-                                        <button onClick={() => eliminarClientes(cliente._id)} className='btn btn-danger'><i className="fa-solid fa-user-xmark"></i></button>
+                                        <button onClick={() => eliminarCliente(cliente._id)} className='btn btn-danger'><i className="fa-solid fa-user-xmark"></i></button>
                                     </td>
                                 </tr>
                             ))}

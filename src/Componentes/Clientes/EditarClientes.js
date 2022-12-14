@@ -1,36 +1,56 @@
 import axios from 'axios';  //sirve para hacer peticiones
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
-const URL = 'http://localhost:5000/api/clientes/'
+const URL = 'http://localhost:5000/api/proveedores/'
 
-const CompAgregarClientes = () => {
-    //propiedades del modelo
+//campo proveedores
+const CompEditarProveedores = () => {
     const [nombres, setNombres] = useState('');
     const [apellidos, setApellidos] = useState('');
     const [documento, setDocumento] = useState('');
     const [correo, setCorreo] = useState('');
     const [telefono, setTelefono] = useState('');
-    const [ciudad, setCiudad] = useState('');
+    const [empresa, setEmpresa] = useState('');
     const navigate = useNavigate();
+    const {id} = useParams();
 
-    const GuardarClientes = async (guardar) => {
+    //funcion actualizar
+
+    const ActualizarProveedor = async (guardar) => {
         guardar.preventDefault()
-        await axios.post(URL, {
+        await axios.put(`${URL}${id}`, {
             nombres: nombres,
             apellidos: apellidos,
             documento: documento,
             correo: correo,
             telefono: telefono,
-            ciudad: ciudad
+            empresa: empresa
         })
-        navigate('/clientes');
+        navigate('/proveedores');
+    }
+
+    useEffect(() => {
+        getProveedorById();
+        // eslint-disable-next-line
+    },[]);
+
+    //funcion modificar
+
+    const getProveedorById = async () => {
+        const res = await axios.get(`${URL}${id}`);
+        setNombres(res.data.nombres)
+        setApellidos(res.data.apellidos)
+        setDocumento(res.data.documento)
+        setCorreo(res.data.correo)
+        setTelefono(res.data.telefono)
+        setEmpresa(res.data.empresa)
     }
 
     return (
         <div>
-            <h3> Modulo Agregar Clientes </h3>
-            <form onSubmit={GuardarClientes}>
+            <h3> Modulo Modificar Proveedores </h3>
+            <form onSubmit={ActualizarProveedor}>
                 <div className='mb-3'>
                     <label className='form-label'> Nombres </label>
                     <input value={nombres} onChange={(guardar) => setNombres(guardar.target.value)}
@@ -62,8 +82,8 @@ const CompAgregarClientes = () => {
                 </div>
 
                 <div className='mb-3'>
-                    <label className='form-label'> Ciudad </label>
-                    <input value={ciudad} onChange={(guardar) => setCiudad(guardar.target.value)}
+                    <label className='form-label'> Empresa </label>
+                    <input value={empresa} onChange={(guardar) => setEmpresa(guardar.target.value)}
                         type='text' className='form-control'></input>
                 </div>
 
@@ -71,8 +91,7 @@ const CompAgregarClientes = () => {
             </form>
         </div>
     )
+
 }
 
-//funcion guardar
-
-export default CompAgregarClientes;
+export default CompEditarProveedores;

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const URL = 'http://localhost:5000/api/productos/'
 
-const CompAgregarProductos = () => {
+export const CompAgregarProductos = () => {
     //propiedades del modelo
     const [codigo, setCodigo] = useState('');
     const [nombreProducto, setProducto] = useState('');
@@ -64,7 +64,3 @@ const CompAgregarProductos = () => {
         </div>
     )
 }
-
-//funcion guardar
-
-export default CompAgregarProductos;

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const URL = 'http://localhost:5000/api/clientes/'
 
-const CompMostrarClientes = () => {
+export const CompMostrarClientes = () => {
     const [clientes, setCliente] = useState([]);
     useEffect(() => {
         getClientes()
@@ -59,5 +59,3 @@ const CompMostrarClientes = () => {
         </div>
     )
 }
-
-export default CompMostrarClientes;

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const URL = 'http://localhost:5000/api/proveedores/'
 
-const CompMostrarProveedores = () => {
+export const CompMostrarProveedores = () => {
     const [proveedores, setProveedor] = useState([]);
     useEffect(() => {
         getProveedores()
@@ -60,4 +60,3 @@ const CompMostrarProveedores = () => {
     )
 }
 
-export default CompMostrarProveedores;

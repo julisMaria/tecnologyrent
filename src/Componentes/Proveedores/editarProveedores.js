@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 const URL = 'http://localhost:5000/api/proveedores/'
 
 //campo proveedores
-const CompEditarProveedores = () => {
+export const CompEditarProveedores = () => {
     const [nombres, setNombres] = useState('');
     const [apellidos, setApellidos] = useState('');
     const [documento, setDocumento] = useState('');
@@ -93,5 +93,3 @@ const CompEditarProveedores = () => {
     )
 
 }
-
-export default CompEditarProveedores;

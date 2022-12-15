@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const URL = 'http://localhost:5000/api/solicitudes/'
 
-const CompMostrarSolicitudes = () => {
+export const CompMostrarSolicitudes = () => {
     const [solicitudes, setSolicitudes] = useState([]);
     useEffect(() => {
         getSolicitudes()
@@ -56,5 +56,3 @@ const CompMostrarSolicitudes = () => {
         </div>
     )
 }
-
-export default CompMostrarSolicitudes;

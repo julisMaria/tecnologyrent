@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const URL = 'http://localhost:5000/api/proveedores/'
 
-const CompAgregarProveedores = () => {
+export const CompAgregarProveedores = () => {
     //propiedades del modelo
     const [nombres, setNombres] = useState('');
     const [apellidos, setApellidos] = useState('');
@@ -73,6 +73,3 @@ const CompAgregarProveedores = () => {
     )
 }
 
-//funcion guardar
-
-export default CompAgregarProveedores;

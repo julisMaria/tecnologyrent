@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const URL = 'http://localhost:5000/api/productos/'
 
-const CompMostrarProductos = () => {
+export const CompMostrarProductos = () => {
     const [productos, setProductos] = useState([]);
     useEffect(() => {
         getProductos()
@@ -56,5 +56,3 @@ const CompMostrarProductos = () => {
         </div>
     )
 }
-
-export default CompMostrarProductos;

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const URL = 'http://localhost:5000/api/solicitudes/'
 
-const CompAgregarSolicitudes = () => {
+export const CompAgregarSolicitudes = () => {
     //propiedades del modelo
     const [fechaInicio, setFechaI] = useState('');
     const [fechaFinal, setFechaF] = useState('');
@@ -64,7 +64,3 @@ const CompAgregarSolicitudes = () => {
         </div>
     )
 }
-
-//funcion guardar
-
-export default CompAgregarSolicitudes;

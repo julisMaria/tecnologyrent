@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const URL = 'http://localhost:5000/api/clientes/'
 
-const CompAgregarClientes = () => {
+export const CompAgregarClientes = () => {
     //propiedades del modelo
     const [nombres, setNombres] = useState('');
     const [apellidos, setApellidos] = useState('');
@@ -72,7 +72,3 @@ const CompAgregarClientes = () => {
         </div>
     )
 }
-
-//funcion guardar
-
-export default CompAgregarClientes;

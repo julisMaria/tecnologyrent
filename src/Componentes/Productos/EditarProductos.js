@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 const URL = 'http://localhost:5000/api/productos/'
 
 //campo proveedores
-const CompEditarProductos = () => {
+export const CompEditarProductos = () => {
     const [codigo, setCodigo] = useState('');
     const [nombreProducto, setProducto] = useState('');
     const [cantidad, setCantidad] = useState('');
@@ -85,4 +85,3 @@ const CompEditarProductos = () => {
 
 }
 
-export default CompEditarProductos;

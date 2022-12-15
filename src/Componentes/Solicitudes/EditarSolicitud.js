@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 const URL = 'http://localhost:5000/api/solicitudes/'
 
 //campo proveedores
-const CompEditarSolicitud = () => {
+export const CompEditarSolicitud = () => {
     const [fechaInicio, setFechaI] = useState('');
     const [fechaFinal, setFechaF] = useState('');
     const [valor, setValor] = useState('');
@@ -83,5 +83,3 @@ const CompEditarSolicitud = () => {
         </div>
     )
 }
-
-export default CompEditarSolicitud;

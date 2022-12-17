@@ -11,6 +11,8 @@ export const CompAgregarSolicitudes = () => {
     const [valor, setValor] = useState('');
     const [seguro, setSeguro] = useState('');
     const [equipo, setEquipo] = useState('');
+    const [estado, setEstado] = useState('');
+
     const navigate = useNavigate();
 
     const GuardarSolicitudes = async (guardar) => {
@@ -20,7 +22,8 @@ export const CompAgregarSolicitudes = () => {
             fechaFinal: fechaFinal,
             valor: valor,
             seguro: seguro,
-            equipo: equipo
+            equipo: equipo,
+            estado: estado
         })
         navigate('/solicitudes');
     }
@@ -56,6 +59,12 @@ export const CompAgregarSolicitudes = () => {
                 <div className='mb-3'>
                     <label className='form-label'> Equipo Rentado </label>
                     <input value={equipo} onChange={(guardar) => setEquipo(guardar.target.value)}
+                        type='text' className='form-control'></input>
+                </div>
+
+                <div className='mb-3'>
+                    <label className='form-label'> Estado </label>
+                    <input value={estado} onChange={(guardar) => setEstado(guardar.target.value)}
                         type='text' className='form-control'></input>
                 </div>
 

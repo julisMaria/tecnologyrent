@@ -11,6 +11,7 @@ export const CompEditarSolicitud = () => {
     const [valor, setValor] = useState('');
     const [seguro, setSeguro] = useState('');
     const [equipo, setEquipo] = useState('');
+    const [estado, setEstado] = useState('');
     const navigate = useNavigate();
     const {id} = useParams();
 
@@ -23,7 +24,8 @@ export const CompEditarSolicitud = () => {
             fechaFinal: fechaFinal,
             valor: valor,
             seguro: seguro,
-            equipo: equipo
+            equipo: equipo,
+            estado: estado
         })
         navigate('/solicitudes');
     }
@@ -42,6 +44,7 @@ export const CompEditarSolicitud = () => {
         setValor(res.data.valor)
         setSeguro(res.data.seguro)
         setEquipo(res.data.equipo)
+        setEstado(res.data.estado)
     }
 
     return (
@@ -75,6 +78,12 @@ export const CompEditarSolicitud = () => {
                 <div className='mb-3'>
                     <label className='form-label'> Equipo Rentado </label>
                     <input value={equipo} onChange={(guardar) => setEquipo(guardar.target.value)}
+                        type='text' className='form-control'></input>
+                </div>
+
+                <div className='mb-3'>
+                    <label className='form-label'> Estado </label>
+                    <input value={estado} onChange={(guardar) => setEstado(guardar.target.value)}
                         type='text' className='form-control'></input>
                 </div>
 

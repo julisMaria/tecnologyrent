@@ -33,6 +33,7 @@ export const CompMostrarSolicitudes = () => {
                                 <th> Valor </th>
                                 <th> Seguro </th>
                                 <th> Equipo Rentado </th>
+                                <th> Estado de la Solicitud </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,6 +44,7 @@ export const CompMostrarSolicitudes = () => {
                                     <td>{solicitudes.valor}</td>
                                     <td>{solicitudes.seguro}</td>
                                     <td>{solicitudes.equipo}</td>
+                                    <td>{solicitudes.estado}</td>
                                     <td> 
                                         <Link to={`/solicitudes/editar/${solicitudes._id}`} className='btn btn-info'><i className="fa-solid fa-file-pen"></i></Link> 
                                         <button onClick={() => eliminarProducto(solicitudes._id)} className='btn btn-danger'><i className="fa-solid fa-user-xmark"></i></button>

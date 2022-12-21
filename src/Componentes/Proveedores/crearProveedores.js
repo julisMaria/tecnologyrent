@@ -28,7 +28,7 @@ export const CompAgregarProveedores = () => {
     }
 
     return (
-        <div>
+        <div className='container'>
             <h3> Modulo Agregar Proveedores </h3>
             <form onSubmit={GuardarProveedores}>
                 <div className='mb-3'>
@@ -43,20 +43,23 @@ export const CompAgregarProveedores = () => {
                         type='text' className='form-control'></input>
                 </div>
 
-                <div className='mb-3'>
-                    <label className='form-label'> Documento </label>
+                <label className='form-label'> Documento </label>
+                <div className="input-group mb-3">
+                    <span className="input-group-text" id="basic-addon1">C.C</span>
                     <input value={documento} onChange={(guardar) => setDocumento(guardar.target.value)}
                         type='number' className='form-control'></input>
                 </div>
 
-                <div className='mb-3'>
-                    <label className='form-label'> Correo </label>
+                <label className='form-label'> Correo </label>
+                <div className="input-group mb-3">
                     <input value={correo} onChange={(guardar) => setCorreo(guardar.target.value)}
                         type='text' className='form-control'></input>
+                    <span className="input-group-text" id="basic-addon2">@example.com</span>
+
                 </div>
 
                 <div className='mb-3'>
-                    <label className='form-label'> Telefono </label>
+                    <label className='form-label'> Teléfono </label>
                     <input value={telefono} onChange={(guardar) => setTelefono(guardar.target.value)}
                         type='number' className='form-control'></input>
                 </div>
@@ -67,7 +70,10 @@ export const CompAgregarProveedores = () => {
                         type='text' className='form-control'></input>
                 </div>
 
-                <button type='submit' className='btn btn-primary'><i className="fa-solid fa-floppy-disk"></i></button>
+                <button type='submit' className='btn btn-primary'>
+                    <i className="fa-solid fa-floppy-disk"></i>
+                    <span id='titulos'> Guardar </span>
+                </button>
             </form>
         </div>
     )

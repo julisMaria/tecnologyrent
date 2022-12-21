@@ -8,11 +8,13 @@ import { CompFooter } from './Componentes/config/Footer';
 
 function App() {
   return (
-    <div className="App">  
+    <div className="App">
+      {/* <script src="https://app.embed.im/snow.js" defer></script> */}
+
       <Router>
-        <CompNav/>
-        <CompRutas/>
-        <CompFooter/>
+        <CompNav />
+        <CompRutas />
+        <CompFooter />
       </Router>
     </div>
   );

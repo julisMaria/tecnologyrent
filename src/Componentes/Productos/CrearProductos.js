@@ -9,6 +9,7 @@ export const CompAgregarProductos = () => {
     const [codigo, setCodigo] = useState('');
     const [nombreProducto, setProducto] = useState('');
     const [cantidad, setCantidad] = useState('');
+    const [categoria, setCategoria] = useState('');
     const [fecha, setFecha] = useState('');
     const [empresa, setEmpresa] = useState('');
     const navigate = useNavigate();
@@ -19,6 +20,7 @@ export const CompAgregarProductos = () => {
             codigo: codigo,
             nombreProducto: nombreProducto,
             cantidad: cantidad,
+            categoria: categoria,
             fecha: fecha,
             empresa: empresa
         })
@@ -26,11 +28,12 @@ export const CompAgregarProductos = () => {
     }
 
     return (
-        <div>
-            <h3> Modulo Agregar Productos </h3>
+        <div className='container'>
+            <h3> Agregar Producto </h3>
             <form onSubmit={GuardarProductos}>
-                <div className='mb-3'>
-                    <label className='form-label'> Codigo </label>
+                    <label className='form-label'> Código </label>
+                    <div className="input-group mb-3">
+                    <span className="input-group-text" id="basic-addon1">#000</span>
                     <input value={codigo} onChange={(guardar) => setCodigo(guardar.target.value)}
                         type='text' className='form-control'></input>
                 </div>
@@ -48,7 +51,15 @@ export const CompAgregarProductos = () => {
                 </div>
 
                 <div className='mb-3'>
-                    <label className='form-label'> Fecha </label>
+                    <label className='form-label'> Categoria </label>
+                    <input value={categoria} onChange={(guardar) => setCategoria(guardar.target.value)}
+                        type='text' className='form-control'></input>
+                </div>
+
+                    <label className='form-label'> Fecha de distribución </label>
+                <div className="input-group mb-3">
+                <span className="input-group-text" id="basic-addon1">DD/MM/AAAA</span>
+
                     <input value={fecha} onChange={(guardar) => setFecha(guardar.target.value)}
                         type='text' className='form-control'></input>
                 </div>
@@ -59,7 +70,10 @@ export const CompAgregarProductos = () => {
                         type='text' className='form-control'></input>
                 </div>
 
-                <button type='submit' className='btn btn-primary'><i className="fa-solid fa-floppy-disk"></i></button>
+                <button type='submit' className='btn btn-primary'>
+                    <i className="fa-solid fa-floppy-disk"></i>
+                    <span id='titulos'> Guardar </span>
+                </button>
             </form>
         </div>
     )

@@ -9,10 +9,11 @@ export const CompEditarProductos = () => {
     const [codigo, setCodigo] = useState('');
     const [nombreProducto, setProducto] = useState('');
     const [cantidad, setCantidad] = useState('');
+    const [categoria, setCategoria] = useState('');
     const [fecha, setFecha] = useState('');
     const [empresa, setEmpresa] = useState('');
     const navigate = useNavigate();
-    const {id} = useParams();
+    const { id } = useParams();
 
     //funcion actualizar
 
@@ -22,6 +23,7 @@ export const CompEditarProductos = () => {
             codigo: codigo,
             nombreProducto: nombreProducto,
             cantidad: cantidad,
+            categoria: categoria,
             fecha: fecha,
             empresa: empresa
         })
@@ -31,7 +33,7 @@ export const CompEditarProductos = () => {
     useEffect(() => {
         getProductoById();
         // eslint-disable-next-line
-    },[]);
+    }, []);
 
     //funcion modificar
 
@@ -40,16 +42,19 @@ export const CompEditarProductos = () => {
         setCodigo(res.data.codigo)
         setProducto(res.data.nombreProducto)
         setCantidad(res.data.cantidad)
+        setCategoria(res.data.categoria)
         setFecha(res.data.fecha)
         setEmpresa(res.data.empresa)
     }
 
     return (
-        <div>
-            <h3> Modulo Agregar Productos </h3>
+        <div className='container'>
+            <h3> Actualizar Producto </h3>
             <form onSubmit={ActualizarProducto}>
-                <div className='mb-3'>
-                    <label className='form-label'> Codigo </label>
+                <label className='form-label'> Código </label>
+                <div className="input-group mb-3">
+                    <span className="input-group-text" id="basic-addon1">#000</span>
+
                     <input value={codigo} onChange={(guardar) => setCodigo(guardar.target.value)}
                         type='text' className='form-control'></input>
                 </div>
@@ -67,7 +72,15 @@ export const CompEditarProductos = () => {
                 </div>
 
                 <div className='mb-3'>
-                    <label className='form-label'> Fecha </label>
+                    <label className='form-label'> Categoria </label>
+                    <input value={categoria} onChange={(guardar) => setCategoria(guardar.target.value)}
+                        type='text' className='form-control'></input>
+                </div>
+
+                <label className='form-label'> Fecha </label>
+                <div className="input-group mb-3">
+                    <span className="input-group-text" id="basic-addon1">DD/MM/AAAA</span>
+
                     <input value={fecha} onChange={(guardar) => setFecha(guardar.target.value)}
                         type='text' className='form-control'></input>
                 </div>
@@ -78,7 +91,11 @@ export const CompEditarProductos = () => {
                         type='text' className='form-control'></input>
                 </div>
 
-                <button type='submit' className='btn btn-primary'><i className="fa-solid fa-floppy-disk"></i></button>
+                <button type='submit' className='btn btn-primary'>
+                    <i className="fa-solid fa-floppy-disk"></i>
+                    <span id='titulos'> Guardar cambios </span>
+                </button>
+
             </form>
         </div>
     )

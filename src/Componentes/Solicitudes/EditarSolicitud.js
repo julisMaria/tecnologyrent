@@ -13,7 +13,7 @@ export const CompEditarSolicitud = () => {
     const [equipo, setEquipo] = useState('');
     const [estado, setEstado] = useState('');
     const navigate = useNavigate();
-    const {id} = useParams();
+    const { id } = useParams();
 
     //funcion actualizar
 
@@ -33,7 +33,7 @@ export const CompEditarSolicitud = () => {
     useEffect(() => {
         getSolicitudById();
         // eslint-disable-next-line
-    },[]);
+    }, []);
 
     //funcion modificar
 
@@ -48,29 +48,36 @@ export const CompEditarSolicitud = () => {
     }
 
     return (
-        <div>
-            <h3> Modulo Editar Solicitudes </h3>
+        <div className='container'>
+            <h3> Actualizar Solicitud </h3>
             <form onSubmit={ActualizarSolicitud}>
-                <div className='mb-3'>
-                    <label className='form-label'>  Fecha inicial </label>
+                <label className='form-label'>  Fecha inicial </label>
+                <div className="input-group mb-3">
+                    <span className="input-group-text" id="basic-addon1">DD/MM/AAAA</span>
+
                     <input value={fechaInicio} onChange={(guardar) => setFechaI(guardar.target.value)}
                         type='text' className='form-control'></input>
                 </div>
 
-                <div className='mb-3'>
-                    <label className='form-label'>  Fecha de Entrega </label>
+                <label className='form-label'>  Fecha de Entrega </label>
+                <div className="input-group mb-3">
+                    <span className="input-group-text" id="basic-addon1">DD/MM/AAAA</span>
+
                     <input value={fechaFinal} onChange={(guardar) => setFechaF(guardar.target.value)}
                         type='text' className='form-control'></input>
                 </div>
 
-                <div className='mb-3'>
-                    <label className='form-label'> Valor </label>
+                <label className='form-label'> Valor </label>
+                <div className="input-group mb-3">
+                    <span class="input-group-text">$</span>
+
                     <input value={valor} onChange={(guardar) => setValor(guardar.target.value)}
                         type='number' className='form-control'></input>
                 </div>
 
-                <div className='mb-3'>
-                    <label className='form-label'> Seguro </label>
+                <label className='form-label'> Seguro </label>
+                <div className="input-group mb-3">
+                    <span class="input-group-text">$</span>
                     <input value={seguro} onChange={(guardar) => setSeguro(guardar.target.value)}
                         type='text' className='form-control'></input>
                 </div>
@@ -87,7 +94,10 @@ export const CompEditarSolicitud = () => {
                         type='text' className='form-control'></input>
                 </div>
 
-                <button type='submit' className='btn btn-primary'><i className="fa-solid fa-floppy-disk"></i></button>
+                <button type='submit' className='btn btn-primary'>
+                    <i className="fa-solid fa-floppy-disk"></i>
+                    <span id='titulos'> Guardar cambios </span>
+                </button>
             </form>
         </div>
     )

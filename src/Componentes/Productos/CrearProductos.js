@@ -2,7 +2,7 @@ import axios from 'axios';  //sirve para hacer peticiones
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const URL = 'http://localhost:5000/api/productos/'
+const URL = 'http://150.136.34.191:5000/api/productos/'
 
 export const CompAgregarProductos = () => {
     //propiedades del modelo

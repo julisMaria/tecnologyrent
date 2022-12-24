@@ -2,7 +2,7 @@ import axios from 'axios';  //sirve para hacer peticiones
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-const URL = 'http://localhost:5000/api/productos/'
+const URL = 'http://150.136.34.191:5000/api/productos/'
 
 //campo proveedores
 export const CompEditarProductos = () => {
